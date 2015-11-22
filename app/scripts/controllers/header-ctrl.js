@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name fitribeAdminAppApp.controller:MainCtrl
+ * @name fitribeAdminAppApp.controller:AboutCtrl
  * @description
- * # MainCtrl
+ * # AboutCtrl
  * Controller of the fitribeAdminAppApp
  */
 angular.module('fitribeAdminAppApp')
-  .controller('MainCtrl', function () {
+  .controller('HeaderCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
