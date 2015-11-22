@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('fitribeAdminAppApp', [
+  .module('app', [
     'ngAnimate',
     'ngAria',
     'ngCookies',

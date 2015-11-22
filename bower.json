@@ -19,7 +19,7 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "fitribeAdminAppApp",
+  "moduleName": "fitribeAdminApp",
   "overrides": {
     "bootstrap": {
       "main": [

@@ -1,13 +1,6 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name fitribeAdminAppApp.controller:AboutCtrl
- * @description
- * # AboutCtrl
- * Controller of the fitribeAdminAppApp
- */
-angular.module('fitribeAdminAppApp')
+angular.module('app')
   .controller('HeaderCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
