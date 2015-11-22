@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name fitribeAdminAppApp
- * @description
- * # fitribeAdminAppApp
- *
- * Main module of the application.
- */
 angular
   .module('fitribeAdminAppApp', [
     'ngAnimate',
@@ -16,7 +8,10 @@ angular
     'ngMessages',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'ui.router',        // angular-ui-router
+    'ui.bootstrap',     // angular-bootstrap
+    'ngStorage',
   ])
   .config(function ($routeProvider) {
     $routeProvider
