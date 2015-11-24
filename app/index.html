@@ -55,12 +55,19 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/services/config.js"></script>
+        <script src="scripts/services/model.js"></script>
         <script src="scripts/controllers/header-ctrl.js"></script>
+        <script src="scripts/controllers/account/client/client-ctrl.js"></script>
+        <script src="scripts/controllers/account/client/client-item-ctrl.js"></script>
+        <script src="scripts/controllers/account/client/client-upsert-ctrl.js"></script>
+        <script src="scripts/controllers/account/client/client-delete-ctrl.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -13,6 +13,20 @@ angular
     'ngStorage',
   ])
 
+  .config(['$resourceProvider', function($resourceProvider) {
+    // set default REST API
+    $resourceProvider.defaults.actions = {
+      query:  {method: 'GET', isArray: true},
+      get:    {method: 'GET'},
+      save:   {method: 'POST'},
+      update: {method: 'PUT'},
+      delete: {method: 'DELETE'}
+    };
+
+    // strip trailing slashes and set the url
+    $resourceProvider.defaults.stripTrailingSlashes = true;
+  }])
+
   .config(function ($stateProvider, $urlRouterProvider) {
 
     // for any unmatched url, redirect it
@@ -42,15 +56,17 @@ angular
         url: '/client',
         views: {
           'container@': {
-            templateUrl: 'views/account/client/client.html'
+            templateUrl: 'views/account/client/client.html',
+            controller: 'ClientCtrl'
           }
         }
       })
       .state('root.client.item', {
-        url: '/:id',
+        url: '/:clientId',
         views: {
           'container@': {
-            templateUrl: 'views/account/client/client.item.html'
+            templateUrl: 'views/account/client/client-item.html',
+            controller: 'ClientItemCtrl'
           }
         }
       })
