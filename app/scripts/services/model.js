@@ -11,7 +11,7 @@ angular.module('app')
       clientId: '@clientId'
     });
 
-    var user = $resource(apiServer + '/user/:clientId', {
+    var user = $resource(apiServer + '/user/:userId', {
       userId: '@userId'
     });
 

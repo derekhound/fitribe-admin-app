@@ -71,6 +71,26 @@ angular
         }
       })
 
+      // user
+      .state('root.user', {
+        url: '/user',
+        views: {
+          'container@': {
+            templateUrl: 'views/account/user/user.html',
+            controller: 'UserCtrl'
+          }
+        }
+      })
+      .state('root.user.item', {
+        url: '/:userId',
+        views: {
+          'container@': {
+            templateUrl: 'views/account/user/user-item.html',
+            controller: 'UserItemCtrl'
+          }
+        }
+      })
+
       ;
 
   });

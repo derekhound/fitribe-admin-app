@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('ClientUpsertCtrl', [
+  .controller('UserUpsertCtrl', [
     '$q', '$scope', '$model', '$uibModalInstance', 'item',
     function ($q, $scope, $model, $uibModalInstance, item) {
 
@@ -10,33 +10,31 @@ angular.module('app')
       $scope.vm = {
         title:        'Edit',
         okName:       'Update',
-        name:         item.name,
-        redirectURI:  item.redirectURI,
-        trusted:      item.trusted
+        username:     item.username,
+        password:     '',
       }
     // new action
     } else {
       $scope.vm = {
         title:        'New',
         okName:       'Create',
-        name:         '',
-        redirectURI:  '',
-        trusted:      true
+        username:     '',
+        password:     '',
       }
     }
 
     $scope.ok = function() {
-      var params = _.pick($scope.vm, ['name', 'redirectURI', 'trusted']);
+      var params = _.pick($scope.vm, ['username', 'password']);
       // edit action
       if (item) {
-        params.clientId = item.clientId;
-        $model.client.update(params, function(client) {
-          $uibModalInstance.close(client);
+        params.userId = item.userId;
+        $model.user.update(params, function(user) {
+          $uibModalInstance.close(user);
         });
       // new action
       } else {
-        $model.client.save(params, function(client) {
-          $uibModalInstance.close(client);
+        $model.user.save(params, function(user) {
+          $uibModalInstance.close(user);
         });
       }
     };
