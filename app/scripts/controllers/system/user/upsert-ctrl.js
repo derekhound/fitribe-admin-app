@@ -2,38 +2,38 @@
 
 angular.module('app')
   .controller('UserUpsertCtrl', [
-    '$q', '$scope', '$model', '$uibModalInstance', 'item',
-    function ($q, $scope, $model, $uibModalInstance, item) {
+    '$q', '$scope', '$uibModalInstance', 'User', 'item',
+    function ($q, $scope, $uibModalInstance, User, item) {
 
     // edit action
     if (item) {
       $scope.vm = {
         title:        'Edit',
-        okName:       'Update',
-        username:     item.username,
+        verb:         'Update',
+        email:        item.email,
         password:     '',
       }
     // new action
     } else {
       $scope.vm = {
         title:        'New',
-        okName:       'Create',
-        username:     '',
+        verb:         'Create',
+        email:        '',
         password:     '',
       }
     }
 
     $scope.ok = function() {
-      var params = _.pick($scope.vm, ['username', 'password']);
+      var params = _.pick($scope.vm, ['email', 'password']);
       // edit action
       if (item) {
-        params.userId = item.userId;
-        $model.user.update(params, function(user) {
+        params.id = item.id;
+        User.upsert(params, function(user) {
           $uibModalInstance.close(user);
         });
       // new action
       } else {
-        $model.user.save(params, function(user) {
+        User.create(params, function(user) {
           $uibModalInstance.close(user);
         });
       }

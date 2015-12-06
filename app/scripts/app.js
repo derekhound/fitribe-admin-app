@@ -97,16 +97,16 @@ angular
         url: '/user',
         views: {
           'container@': {
-            templateUrl: 'views/account/user/user.html',
-            controller: 'UserCtrl'
+            templateUrl: 'views/system/user/index.html',
+            controller: 'UserIndexCtrl'
           }
         }
       })
       .state('root.user.item', {
-        url: '/:userId',
+        url: '/:id',
         views: {
           'container@': {
-            templateUrl: 'views/account/user/user-item.html',
+            templateUrl: 'views/system/user/item.html',
             controller: 'UserItemCtrl'
           }
         }

@@ -5,9 +5,9 @@
 <div class="modal-body">
   <form class="form-horizontal">
     <div class="form-group">
-      <label for="username" class="col-md-2 control-label">username</label>
+      <label for="email" class="col-md-2 control-label">email</label>
       <div class="col-md-10">
-        <input type="text" class="form-control" id="username" ng-model="vm.username">
+        <input type="email" class="form-control" id="email" ng-model="vm.email">
       </div>
     </div>
     <div class="form-group">
@@ -20,6 +20,6 @@
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-primary" type="button" ng-click="ok()">{{vm.okName}}</button>
+  <button class="btn btn-primary" type="button" ng-click="ok()">{{vm.verb}}</button>
   <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
 </div>

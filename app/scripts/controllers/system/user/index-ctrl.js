@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('app')
-  .controller('UserCtrl', [
-    '$q', '$scope', '$model', '$uibModal',
-    function ($q, $scope, $model, $uibModal) {
+  .controller('UserIndexCtrl', [
+    '$q', '$scope', '$uibModal', 'User',
+    function ($q, $scope, $uibModal, User) {
 
     // view model
     $scope.vm = {
@@ -14,7 +14,7 @@ angular.module('app')
       // open modal
       var modalInstance = $uibModal.open({
         animation: false,
-        templateUrl: 'views/account/user/user-upsert.html',
+        templateUrl: 'views/system/user/upsert.html',
         controller: 'UserUpsertCtrl',
         resolve: {
           item: function() {
@@ -33,7 +33,7 @@ angular.module('app')
       // open modal
       var modalInstance = $uibModal.open({
         animation: false,
-        templateUrl: 'views/account/user/user-delete.html',
+        templateUrl: 'views/system/user/delete.html',
         controller: 'UserDeleteCtrl',
         resolve: {
           item: function() {
@@ -48,14 +48,14 @@ angular.module('app')
       });
     };
 
-    function query() {
-      $model.user.query({}, function(users) {
+    function find() {
+      User.find({}, function(users) {
         $scope.vm.items = users;
       });
     }
 
     function init() {
-      query();
+      find();
     };
 
     init();

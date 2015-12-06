@@ -36,25 +36,20 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="#/">Fitribe</a>
+      <a class="navbar-brand" href="#">Fitribe</a>
     </div>
 
     <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
       <!-- Left Part -->
       <ul class="nav navbar-nav">
-        <!-- Home -->
-        <li><a href="#/">Home</a></li>
         <!-- Account -->
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button">Account <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button">System <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#/client">Client</a></li>
             <li><a href="#/user">User</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Auth Code</a></li>
-            <li><a href="#">Refresh Token</a></li>
-            <li><a href="#">Access Token</a></li>
+            <li><a href="#/role">Role</a></li>
+            <li><a href="#/role_mapping">RoleMapping</a></li>
           </ul>
         </li>
       </ul>
@@ -66,7 +61,7 @@
             <span class="glyphicon glyphicon-cog"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#" ng-click="logout()">Logout</a></li>
+            <li><a href="" ng-click="logout()">Logout</a></li>
           </ul>
         </li>
       </ul>

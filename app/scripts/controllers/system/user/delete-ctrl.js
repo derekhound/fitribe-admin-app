@@ -2,11 +2,11 @@
 
 angular.module('app')
   .controller('UserDeleteCtrl', [
-    '$q', '$scope', '$model', '$uibModalInstance', 'item',
-    function ($q, $scope, $model, $uibModalInstance, item) {
+    '$q', '$scope', '$uibModalInstance', 'User', 'item',
+    function ($q, $scope, $uibModalInstance, User, item) {
 
     $scope.ok = function() {
-      $model.user.delete({ userId: item.userId }, function(user) {
+      User.delete({ id: item.id }, function(user) {
         $uibModalInstance.close(user);
       });
     };

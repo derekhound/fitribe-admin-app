@@ -9,19 +9,19 @@
 
     <table class="table table-striped table-bordered table-condensed">
       <tr>
-        <th class="text-center">userId</th>
-        <th class="text-center">username</th>
-        <th class="text-center">createdAt</th>
-        <th class="text-center">updatedAt</th>
+        <th class="text-center">id</th>
+        <th class="text-center">email</th>
+        <th class="text-center">created</th>
+        <th class="text-center">lastUpdated</th>
         <th class="text-center">action</th>
       </tr>
       <tr ng-repeat="item in vm.items">
-        <td class="text-center">{{item.userId}}</td>
-        <td class="text-center">{{item.username}}</td>
-        <td class="text-center">{{item.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-        <td class="text-center">{{item.updatedAt | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td class="text-center">{{item.id}}</td>
+        <td class="text-center">{{item.email}}</td>
+        <td class="text-center">{{item.created     | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td class="text-center">{{item.lastUpdated | date:'yyyy-MM-dd HH:mm:ss'}}</td>
         <td class="text-center">
-          <a type="button" class="btn btn-xs btn-primary" href="#/user/{{item.userId}}">Show</a>
+          <a type="button" class="btn btn-xs btn-primary" href="#/user/{{item.id}}">Show</a>
           <a type="button" class="btn btn-xs btn-warning" ng-click="upsert(item)">Edit</a>
           <a type="button" class="btn btn-xs btn-danger" ng-click="delete(item)">Delete</a>
         </td>
