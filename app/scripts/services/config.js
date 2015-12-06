@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('app')
-  .factory('$config', function() {
+  .factory('ConfigService', function() {
     return {
-      apiServer: 'http://10.1.201.191:1337'
+      apiServer: 'http://10.1.201.191:3000/api'
     };
   });
 

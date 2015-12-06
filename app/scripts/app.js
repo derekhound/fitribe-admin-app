@@ -11,8 +11,10 @@ angular
     'ui.router',        // angular-ui-router
     'ui.bootstrap',     // angular-bootstrap
     'ngStorage',
+    'lbServices'        // loopback-service
   ])
 
+  /*
   .config(['$resourceProvider', function($resourceProvider) {
     // set default REST API
     $resourceProvider.defaults.actions = {
@@ -26,6 +28,13 @@ angular
     // strip trailing slashes and set the url
     $resourceProvider.defaults.stripTrailingSlashes = true;
   }])
+  */
+
+  /*
+  .config(['LoopBackResourceProvider', 'ConfigService', function(LoopBackResourceProvider, ConfigService) {
+    LoopBackResourceProvider.setUrlBase(ConfigService.apiServer);
+  }])
+  */
 
   .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -47,6 +56,17 @@ angular
           },
           'footer': {
             templateUrl: 'views/footer.html'
+          }
+        }
+      })
+
+      // auth
+      .state('root.signin', {
+        url: '/signin',
+        views: {
+          'container@': {
+            templateUrl: 'views/auth/signin.html',
+            controller: 'SigninCtrl'
           }
         }
       })
