@@ -1,3 +1,4 @@
+<!-- unauthenticated -->
 <div class="navbar navbar-inverse navbar-static-top" role="navigation" ng-show="!isAuthenticated()">
   <div class="container">
     <div class="navbar-header">
@@ -9,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="#/">Fitribe</a>
+      <a class="navbar-brand" href="#">Fitribe</a>
     </div>
 
     <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -19,12 +20,14 @@
 
       <!-- Right Part -->
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/signup">Singup</a></li>
       </ul>
     </div>
   </div>
 </div>
 
 
+<!-- authenticated -->
 <div class="navbar navbar-inverse navbar-static-top" role="navigation" ng-show="isAuthenticated()">
   <div class="container">
     <div class="navbar-header">

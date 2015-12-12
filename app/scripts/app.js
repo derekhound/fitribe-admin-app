@@ -39,14 +39,30 @@ angular
   .config(function ($stateProvider, $urlRouterProvider) {
 
     // for any unmatched url, redirect it
-    //$urlRouterProvider.when('', '/');
-    //$urlRouterProvider.otherwise('/');
-
+    $urlRouterProvider.when('', '/');
+    $urlRouterProvider.otherwise('/');
 
     // setup states
     $stateProvider
 
-      // root layout
+      // home
+      .state('portal', {
+        url: '/',
+        resolve: {
+          autologin: ['$q', '$timeout', '$state', 'User', function($q, $timeout, $state, User) {
+            var s = 'root.signin';
+            if (User.isAuthenticated()) {
+              s = 'root.user';
+            }
+            $timeout(function() {
+              $state.go(s);
+            });
+            return $q.reject();
+          }]
+        }
+      })
+
+      // root
       .state('root', {
         url: '',
         abstract: true,
@@ -67,7 +83,16 @@ angular
         views: {
           'container@': {
             templateUrl: 'views/auth/signin.html',
-            controller: 'SigninCtrl'
+            controller: 'AuthSigninCtrl'
+          }
+        }
+      })
+      .state('root.signup', {
+        url: '/signup',
+        views: {
+          'container@': {
+            templateUrl: 'views/auth/signup.html',
+            controller: 'AuthSignupCtrl'
           }
         }
       })

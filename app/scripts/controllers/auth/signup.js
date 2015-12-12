@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('AuthSigninCtrl', [
+  .controller('AuthSignupCtrl', [
     '$q', '$scope', '$state', 'AuthService',
     function ($q, $scope, $state, AuthService) {
 
@@ -11,8 +11,8 @@ angular.module('app')
       password: ''
     };
 
-    $scope.signin = function() {
-      AuthService.login($scope.vm.email, $scope.vm.password)
+    $scope.signup = function() {
+      AuthService.register($scope.vm.email, $scope.vm.password)
         .then(function() {
           $state.go('portal');
         });

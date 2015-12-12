@@ -2,8 +2,8 @@
 
 angular.module('app')
   .controller('HeaderCtrl', [
-    '$q', '$scope', 'AuthService', 'User',
-    function ($q, $scope, AuthService, User) {
+    '$q', '$scope', '$state', 'AuthService', 'User',
+    function ($q, $scope, $state, AuthService, User) {
 
     // view model
     $scope.vm = {};
@@ -13,7 +13,10 @@ angular.module('app')
     };
 
     $scope.logout = function() {
-      AuthService.logout();
+      AuthService.logout()
+        .then(function() {
+          $state.go('portal');
+        });
     };
 
     function init() {
