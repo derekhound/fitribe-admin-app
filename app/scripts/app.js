@@ -97,6 +97,39 @@ angular
         }
       })
 
+      // setting
+      .state('root.settings', {
+        url: '/settings',
+        views: {
+          'container@': {
+            templateUrl: 'views/settings/index.html',
+            controller: 'SettingsIndexCtrl'
+          }
+        }
+      })
+      .state('root.settings.profile', {
+        url: '/profile',
+        views: {
+          'middle': {
+            templateUrl: 'views/settings/profile/index.html',
+            controller: 'SettingsProfileIndexCtrl'
+          }
+        }
+      })
+     .state('root.settings.account', {
+        url: '/account',
+        views: {
+          'middle': {
+            templateUrl: 'views/settings/account/index.html',
+            controller: 'SettingsAccountIndexCtrl'
+          }
+        }
+      })
+
+
+
+
+
       // client
       .state('root.client', {
         url: '/client',
