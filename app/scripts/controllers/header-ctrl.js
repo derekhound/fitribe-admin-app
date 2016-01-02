@@ -2,14 +2,14 @@
 
 angular.module('app')
   .controller('HeaderCtrl', [
-    '$q', '$scope', '$state', 'AuthService', 'User',
-    function ($q, $scope, $state, AuthService, User) {
+    '$q', '$scope', '$state', 'AuthService', 'MyUser',
+    function ($q, $scope, $state, AuthService, MyUser) {
 
     // view model
     $scope.vm = {};
 
     $scope.isAuthenticated = function() {
-      return User.isAuthenticated();
+      return MyUser.isAuthenticated();
     };
 
     $scope.logout = function() {

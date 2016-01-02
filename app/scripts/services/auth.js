@@ -2,11 +2,11 @@
 
 angular.module('app')
   .factory('AuthService', [
-    '$rootScope', 'User',
-    function ($rootScope, User) {
+    '$rootScope', 'MyUser',
+    function ($rootScope, MyUser) {
 
     function login(email, password) {
-      return User
+      return MyUser
         .login({email: email, password: password})
         .$promise
         .then(function(res) {
@@ -19,7 +19,7 @@ angular.module('app')
     }
 
     function logout() {
-      return User
+      return MyUser
        .logout()
         .$promise
        .then(function() {
@@ -28,7 +28,7 @@ angular.module('app')
     }
 
     function register(email, password) {
-      return User
+      return MyUser
         .create({
          email: email,
          password: password

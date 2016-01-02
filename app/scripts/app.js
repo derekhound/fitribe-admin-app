@@ -8,6 +8,7 @@ angular
     'ngMessages',
     'ngResource',
     'ngSanitize',
+    'ngFileUpload',     // ng-file-upload
     'ui.router',        // angular-ui-router
     'ui.bootstrap',     // angular-bootstrap
     'ngStorage',
@@ -49,9 +50,9 @@ angular
       .state('portal', {
         url: '/',
         resolve: {
-          autologin: ['$q', '$timeout', '$state', 'User', function($q, $timeout, $state, User) {
+          autologin: ['$q', '$timeout', '$state', 'MyUser', function($q, $timeout, $state, MyUser) {
             var s = 'root.signin';
-            if (User.isAuthenticated()) {
+            if (MyUser.isAuthenticated()) {
               s = 'root.user';
             }
             $timeout(function() {
@@ -126,6 +127,25 @@ angular
         }
       })
 
+      // home
+      .state('root.home', {
+        url: '/home',
+        views: {
+          'container@': {
+            templateUrl: 'views/home/index.html',
+            controller: 'HomeIndexCtrl'
+          }
+        }
+      })
+      .state('root.home.feed', {
+        url: '/feed',
+        views: {
+          'middle': {
+            templateUrl: 'views/home/feed/index.html',
+            controller: 'HomeFeedIndexCtrl'
+          }
+        }
+      })
 
 
 

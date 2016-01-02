@@ -1,0 +1,80 @@
+
+<div>
+   <form class="form-horizontal" ng-submit="post()">
+    <!-- content -->
+    <div class="form-group">
+      <label for="content" class="col-md-2 control-label">Message</label>
+      <div class="col-md-10">
+        <textarea class="form-control" rows="3" id="content" ng-model="vm.message"></textarea>
+      </div>
+    </div>
+    <!-- media -->
+    <div class="form-group">
+      <label for="photo" class="col-md-2 control-label">Photo</label>
+      <div class="col-md-10">
+        <button class="btn btn-default" ngf-select ng-model="vm.photos" ngf-multiple="true">Select</button>
+        <img ngf-thumbnail="vm.photos[$index]" ngf-size="{width: 100, height: 100, quality: 0.9}" ng-repeat="photo in vm.photos">
+      </div>
+    </div>
+    <!-- save -->
+    <div class="form-group">
+      <div class="col-md-10 col-md-offset-2">
+        <button type="submit" class="btn btn-primary">Post</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<br />
+<br />
+<br />
+
+
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="https://pbs.twimg.com/profile_images/614557831304351744/oLRJ9MtR_bigger.jpg" width="64">
+    </a>
+  </div>
+  <div class="media-body">
+    <h5 class="media-heading">Josh Constine @JoshConstine</h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="https://pbs.twimg.com/profile_images/614557831304351744/oLRJ9MtR_bigger.jpg" width="64">
+        </a>
+      </div>
+      <div class="media-body">
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="https://pbs.twimg.com/profile_images/614557831304351744/oLRJ9MtR_bigger.jpg" width="64">
+    </a>
+  </div>
+  <div class="media-body">
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+  </div>
+</div>
+
+
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="https://pbs.twimg.com/profile_images/614557831304351744/oLRJ9MtR_bigger.jpg" width="64">
+    </a>
+  </div>
+  <div class="media-body">
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  </div>
+</div>
+
