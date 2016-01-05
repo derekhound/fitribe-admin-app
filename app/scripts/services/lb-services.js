@@ -956,6 +956,12 @@ module.factory(
           method: "POST"
         },
 
+        // INTERNAL. Use Post.from() instead.
+        "::get::Post::from": {
+          url: urlBase + "/Posts/:id/from",
+          method: "GET"
+        },
+
         /**
          * @ngdoc method
          * @name lbServices.MyUser#getCurrent
@@ -2223,6 +2229,379 @@ module.factory(
       { 'id': '@id' },
       {
 
+        // INTERNAL. Use Post.from() instead.
+        "prototype$__get__from": {
+          url: urlBase + "/Posts/:id/from",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__findById__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Find a related item by id for files.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for files
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "prototype$__findById__files": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Posts/:id/files/:fk",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__destroyById__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Delete a related item by id for files.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for files
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "prototype$__destroyById__files": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Posts/:id/files/:fk",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__updateById__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Update a related item by id for files.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for files
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "prototype$__updateById__files": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Posts/:id/files/:fk",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__link__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Add a related item by id for files.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for files
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "prototype$__link__files": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Posts/:id/files/rel/:fk",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__unlink__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Remove the files relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for files
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "prototype$__unlink__files": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Posts/:id/files/rel/:fk",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__exists__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Check the existence of files relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for files
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "prototype$__exists__files": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Posts/:id/files/rel/:fk",
+          method: "HEAD"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__get__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Queries files of Post.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "prototype$__get__files": {
+          isArray: true,
+          url: urlBase + "/Posts/:id/files",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__create__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Creates a new instance in files of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "prototype$__create__files": {
+          url: urlBase + "/Posts/:id/files",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__delete__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Deletes all files of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "prototype$__delete__files": {
+          url: urlBase + "/Posts/:id/files",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#prototype$__count__files
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Counts files of Post.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "prototype$__count__files": {
+          url: urlBase + "/Posts/:id/files/count",
+          method: "GET"
+        },
+
         /**
          * @ngdoc method
          * @name lbServices.Post#create
@@ -2340,41 +2719,6 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name lbServices.Post#findById
-         * @methodOf lbServices.Post
-         *
-         * @description
-         *
-         * Find a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         *  - `filter` – `{object=}` - Filter defining fields and include
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Post` object.)
-         * </em>
-         */
-        "findById": {
-          url: urlBase + "/Posts/:id",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
          * @name lbServices.Post#find
          * @methodOf lbServices.Post
          *
@@ -2442,6 +2786,39 @@ module.factory(
         "prototype$updateAttributes": {
           url: urlBase + "/Posts/:id",
           method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#_findById
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "_findById": {
+          url: urlBase + "/Posts/:id",
+          method: "GET"
         },
 
         /**
@@ -2535,6 +2912,42 @@ module.factory(
     */
     R.modelName = "Post";
 
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Post#from
+         * @methodOf lbServices.Post
+         *
+         * @description
+         *
+         * Fetches belongsTo relation from.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MyUser` object.)
+         * </em>
+         */
+        R.from = function() {
+          var TargetResource = $injector.get("MyUser");
+          var action = TargetResource["::get::Post::from"];
+          return action.apply(R, arguments);
+        };
 
     return R;
   }]);
