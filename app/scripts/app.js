@@ -31,11 +31,14 @@ angular
   }])
   */
 
-  /*
-  .config(['LoopBackResourceProvider', 'ConfigService', function(LoopBackResourceProvider, ConfigService) {
-    LoopBackResourceProvider.setUrlBase(ConfigService.apiServer);
+  .config(['LoopBackResourceProvider', 'API_SERVER', function(LoopBackResourceProvider, API_SERVER) {
+    LoopBackResourceProvider.setUrlBase(API_SERVER);
   }])
-  */
+
+  .config(['$httpProvider', function($httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  }])
 
   .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -53,7 +56,7 @@ angular
           autologin: ['$q', '$timeout', '$state', 'MyUser', function($q, $timeout, $state, MyUser) {
             var s = 'root.signin';
             if (MyUser.isAuthenticated()) {
-              s = 'root.user';
+              s = 'root.home.feed';
             }
             $timeout(function() {
               $state.go(s);
